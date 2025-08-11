@@ -14,13 +14,15 @@ Turbo C la use pannureenga na intha code a `C:\Turbo C\bin` (or similar) folder 
 
 PS: Some codes la for loops ipdi irukum:
 
- - `for (int i = 0; i < n; i++) {
- 	...
- }`
+ - ```c 
+	 for (int i = 0; i < n; i++) {
+	 	...
+	 }```
 
  - Aana Turbo C la for loop kulla variables initialize panna mudiyathu, so intha mathiri places la error vanthuthuna loop ku veliya variable a initialize pannunga.
 
- - `int i;
+ - ```c
+    int i;
     for (i = 0; i < n; i++) {
     	...
-    }`
+    }```
