@@ -242,8 +242,7 @@ void sort() {
 
 
 
-
-int main(void) {
+int main() {
     int choice, n, pos, data;
 
     while (1) {
