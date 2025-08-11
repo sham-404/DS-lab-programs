@@ -1,25 +1,28 @@
-/* queue_array_linear.c
-   Simple linear queue with menu: Enqueue, Dequeue, Show, Exit
+/* circular_queue.c
+   Menu-driven circular queue implementation using an array
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 100
+#define SIZE 5
 
 int queueArr[SIZE];
 int front = -1;
 int rear = -1;
 
+
 void enqueue(int x) {
-    if (rear == SIZE - 1) {
+    if (front == (rear + 1) % SIZE) {
         printf("\nQueue Overflow! Cannot insert %d\n", x);
         return;
     }
     if (front == -1) {
-        front = 0; // first element
+        front = rear = 0;
+    } else {
+        rear = (rear + 1) % SIZE;
     }
-    queueArr[++rear] = x;
+    queueArr[rear] = x;
     printf("\nInserted %d into queue.\n", x);
 }
 
@@ -30,10 +33,10 @@ int dequeue() {
     }
     int val = queueArr[front];
     if (front == rear) {
-        // last element removed
+        // Only one element
         front = rear = -1;
     } else {
-        front++;
+        front = (front + 1) % SIZE;
     }
     printf("\nDeleted %d from queue.\n", val);
     return val;
@@ -44,9 +47,12 @@ void display() {
         printf("\nQueue is empty.\n");
         return;
     }
-    printf("\nQueue elements:\n");
-    for (int i = front; i <= rear; i++) {
+    printf("\nQueue elements: ");
+    int i = front;
+    while (1) {
         printf("%d ", queueArr[i]);
+        if (i == rear) break;
+        i = (i + 1) % SIZE;
     }
     printf("\n");
 }
@@ -55,7 +61,7 @@ int main() {
     int choice, value;
 
     while (1) {
-        printf("\nOperations performed by Queue \n");
+        printf("\nOperations performed by Circular Queue\n");
         printf("1. Insert (Enqueue)\n");
         printf("2. Delete (Dequeue)\n");
         printf("3. Show\n");
