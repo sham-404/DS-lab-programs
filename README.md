@@ -17,7 +17,7 @@ PS: Some codes la for loops ipdi irukum:
  - ```c 
 	 for (int i = 0; i < n; i++) {
 	 	...
-	 }```
+	 }
 
  - Aana Turbo C la for loop kulla variables initialize panna mudiyathu, so intha mathiri places la error vanthuthuna loop ku veliya variable a initialize pannunga.
 
@@ -25,4 +25,4 @@ PS: Some codes la for loops ipdi irukum:
     int i;
     for (i = 0; i < n; i++) {
     	...
-    }```
+    }
