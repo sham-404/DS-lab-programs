@@ -1,5 +1,5 @@
 /* linked_list.c
-   Singly Linked List with basic operations + sort() using insertion sort
+   Singly Linked List with basic operations
 */
 
 #include <stdio.h>
@@ -213,7 +213,7 @@ void reverseList() {
     printf("\nList reversed.\n");
 }
 
-/* Insertion sort on linked list */
+
 void sort() {
     struct Node *current = start;
     struct Node *index = NULL;
