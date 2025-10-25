@@ -35,7 +35,7 @@ void mergeSort(int arr[], int l, int r) {
 }
 
 void printArray(int A[], int size) {
-    for (int i = 0; i < size; i++) printf("%d ", A[i]);
+    int i; for (i= 0; i < size; i++) printf("%d ", A[i]);
     printf("\n");
 }
 
@@ -46,7 +46,7 @@ int main() {
 
     int a[n];  // Allocate array
     printf("Enter %d elements of the array: ", n);
-    for (int i = 0; i < n; i++) scanf("%d", &a[i]);
+    int i; for (i= 0; i < n; i++) scanf("%d", &a[i]);
 
     printf("Given array is:\n");
     printArray(a, n);

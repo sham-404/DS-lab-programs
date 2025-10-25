@@ -1,4 +1,4 @@
-// Uncomment #include <conio.h>, getch() and clrscr() if you are using Turbo C
+// Uncomment #include <conio.h>, getchar() and if you are using Turbo C
 
 #include <stdio.h>
 #include <string.h>
@@ -35,7 +35,7 @@ int main(void) {
 
     s.top = -1;
 
-    // clrscr();
+    // 
 
     printf("Enter the postfix expression: ");
     scanf("%s", exp);
@@ -44,7 +44,7 @@ int main(void) {
     printf("Length: %d\n", len);
     printf("Postfix expression: %s\n", exp);
 
-    for (int i = 0; i < len; i++) {
+    int i; for (i= 0; i < len; i++) {
         char ch = exp[i];
 
         if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
@@ -69,7 +69,7 @@ int main(void) {
 
     printf("Result = %d\n", result);
 
-    // getch();
+    // getchar();
 
     return 0;
 }

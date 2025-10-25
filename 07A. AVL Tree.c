@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef enum { FALSE, TRUE } bool;
+typedef enum { FALSE, TRUE } int;
 
 typedef struct node {
     int info;
@@ -11,7 +11,7 @@ typedef struct node {
 } node;
 
 // Function prototypes
-node* insert(int info, node* pptr, bool* ht_inc);
+node* insert(int info, node* pptr, int* ht_inc);
 node* search(node* ptr, int info);
 void display(node* ptr, int level);
 void inorder(node* ptr);
@@ -20,7 +20,7 @@ void inorder(node* ptr);
 int main() {
     node* root = NULL;
     int choice, info;
-    bool ht_inc;
+    int ht_inc;
 
     while(1) {
         printf("\n1. Insert\n2. Display\n3. Inorder Traversal\n4. Exit\n");
@@ -93,7 +93,7 @@ node* rotateLeft(node* p) {
 }
 
 // AVL insertion
-node* insert(int info, node* pptr, bool* ht_inc) {
+node* insert(int info, node* pptr, int* ht_inc) {
     if(pptr == NULL) {
         pptr = (node*)malloc(sizeof(node));
         pptr->info = info;

@@ -7,7 +7,7 @@ int h[TABLE_SIZE];  // Hash table
 
 // Initialize the hash table
 void initialize() {
-    for (int i = 0; i < TABLE_SIZE; i++)
+    int i; for (i= 0; i < TABLE_SIZE; i++)
         h[i] = -1;  // Using -1 to indicate empty slot
 }
 
@@ -55,7 +55,7 @@ void search() {
 // Display the hash table
 void display() {
     printf("\nElements in the hash table are:\n");
-    for (int i = 0; i < TABLE_SIZE; i++)
+    int i; for (i= 0; i < TABLE_SIZE; i++)
         if (h[i] != -1)
             printf("Index %d: %d\n", i, h[i]);
         else

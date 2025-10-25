@@ -35,11 +35,11 @@ void show() {
         return;
     }
     printf("\nStack (top -> bottom):\n");
-    for (int i = top; i >= 0; --i) {
+    int i;
+    for (i = top; i >= 0; --i) {
         printf("%d\n", stackArr[i]);
     }
 }
-
 
 int main(void) {
     int choice;
@@ -56,7 +56,8 @@ int main(void) {
         if (scanf("%d", &choice) != 1) {
             /* clear invalid input */
             int c;
-            while ((c = getchar()) != '\n' && c != EOF) { }
+            while ((c = getchar()) != '\n' && c != EOF) {
+            }
             printf("Invalid input. Please enter a number.\n");
             continue;
         }
@@ -65,7 +66,9 @@ int main(void) {
             case 1:
                 printf("Enter element to be pushed: ");
                 if (scanf("%d", &value) != 1) {
-                    int c; while ((c = getchar()) != '\n' && c != EOF) { }
+                    int c;
+                    while ((c = getchar()) != '\n' && c != EOF) {
+                    }
                     printf("Invalid input.\n");
                     break;
                 }
@@ -82,7 +85,7 @@ int main(void) {
 
             case 4:
                 printf("Exiting.\n");
-                exit(EXIT_SUCCESS);
+                exit(0);
 
             default:
                 printf("\nInvalid choice!!\n");

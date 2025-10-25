@@ -7,7 +7,7 @@ int h[TABLE_SIZE];
 
 // Initialize hash table
 void initialize() {
-    for (int i = 0; i < TABLE_SIZE; i++)
+    int i; for (i= 0; i < TABLE_SIZE; i++)
         h[i] = -1;  // -1 indicates empty slot
 }
 
@@ -19,7 +19,7 @@ void insert() {
 
     hkey = key % TABLE_SIZE;
 
-    for (int i = 0; i < TABLE_SIZE; i++) {
+    int i; for (i= 0; i < TABLE_SIZE; i++) {
         index = (hkey + i * i) % TABLE_SIZE;
         if (h[index] == -1) {  // empty slot
             h[index] = key;
@@ -39,7 +39,7 @@ void search() {
 
     hkey = key % TABLE_SIZE;
 
-    for (int i = 0; i < TABLE_SIZE; i++) {
+    int i; for (i= 0; i < TABLE_SIZE; i++) {
         index = (hkey + i * i) % TABLE_SIZE;
         if (h[index] == key) {
             printf("Value %d is found at index %d\n", key, index);
@@ -56,7 +56,7 @@ void search() {
 // Display hash table
 void display() {
     printf("\nElements in the hash table:\n");
-    for (int i = 0; i < TABLE_SIZE; i++) {
+    int i; for (i= 0; i < TABLE_SIZE; i++) {
         if (h[i] != -1)
             printf("Index %d: %d\n", i, h[i]);
         else

@@ -46,7 +46,7 @@ void display() {
         return;
     }
     printf("\nQueue elements:\n");
-    for (int i = front; i <= rear; i++) {
+    int i; for (i= front; i <= rear; i++) {
         printf("%d ", queueArr[i]);
     }
     printf("\n");
