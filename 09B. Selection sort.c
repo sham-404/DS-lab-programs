@@ -1,17 +1,20 @@
 #include <stdio.h>
 
 int* selectionSort(int array[], int n) {
-    int i, j, temp;
-    for(i = 0; i < n - 1; i++) {
-        for(j = i + 1; j < n; j++) {
-            if(array[i] > array[j]) {
-                // Swap
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
+    int i, j, minIndex, temp;
+
+    for (i = 0; i < n - 1; i++) {
+        minIndex = i;
+        for (j = i + 1; j < n; j++) {
+            if (array[j] < array[minIndex]) minIndex = j;
         }
+
+        // Swap once per pass
+        temp = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = temp;
     }
+
     return array;
 }
 
@@ -22,14 +25,12 @@ int main() {
     scanf("%d", &n);
 
     printf("Enter %d elements:\n", n);
-    for(i = 0; i < n; i++)
-        scanf("%d", &array[i]);
+    for (i = 0; i < n; i++) scanf("%d", &array[i]);
 
     int* sortedArray = selectionSort(array, n);
 
-    printf("Sorted list:\n");
-    for(i = 0; i < n; i++)
-        printf("%d  ", sortedArray[i]);
+    printf("\nSorted list:\n");
+    for (i = 0; i < n; i++) printf("%d  ", sortedArray[i]);
 
     printf("\n");
     return 0;
